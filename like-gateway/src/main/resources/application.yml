@@ -1,0 +1,25 @@
+server:
+  port: 8093
+spring:
+  application:
+    name: StephenLikeGateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+    gateway:
+      routes:
+        - id: StephenLikeApi
+          uri: lb://StephenLikeApi
+          predicates:
+            - Path=/like/**
+          filters:
+            - StripPrefix=1    #表示路由时会去除的路径级别
+
+
+#        - id: userapi
+#          uri: lb://LikeApi
+#          predicates:
+#            - Path=/user/**
+#          filters:
+#            - StripPrefix=1    #表示路由时会去除的路径级别
