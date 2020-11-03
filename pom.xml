@@ -71,4 +71,12 @@
         </plugins>
     </build>
 
+    <modules>
+        <module>like-common</module>
+        <module>like-entity</module>
+        <module>like-api</module>
+        <module>like-gateway</module>
+        <module>like-provider</module>
+    </modules>
+
 </project>
